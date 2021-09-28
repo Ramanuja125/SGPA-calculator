@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA Calculator</title>
+    <link rel="stylesheet" href="sgpa.css">
+    <script src="pdf1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+</head>
+
+<body>
+    <h1>
+        <center>Welcome to SGPA calculator.</center>
+    </h1><br><br>
+
+
+    <div id="main" class="main">
+        <center>
+            <label for="sem" class="sem"><b>Select semester:</b></label>
+            <select name="sem" id="sem" class="remer">
+                <option value="_">--</option>
+                <option value="1">P cycle</option>
+                <option value="2">C cycle</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+    </div>
+    </center>
+
+    <div id="invoice">
+
+        <div id="sem1" style="display: none;" class="tempo">
+
+            <center>
+                <table>
+                    <tr>
+                        <td>18MAT11</td>
+                        <td><input type="number" id="mat11"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18PHY12</td>
+                        <td><input type="number" id="xx12"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18ELE13</td>
+                        <td><input type="number" id="xx13"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18CIV14</td>
+                        <td><input type="number" id="xx14"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18EGDL15</td>
+                        <td><input type="number" id="xx15"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18PHYL16</td>
+                        <td><input type="number" id="xx16L"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18ELEL17</td>
+                        <td><input type="number" id="xx17L"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18EGH18</td>
+                        <td><input type="number" id="xx18"></td>
+                    </tr>
+
+
+                </table><br>
+            </center>
+            <div id="editor">
+                <button onclick="sem1sgpa()" class="but">Submit</button>
+
+                <br><br>
+
+                <p>SGPA: <span id="sem1finalsgpa" class="span">0</span></p><br><br>
+            </div>
+            <button id="download" class="but">generate PDF</button>
+
+        </div>
+    </div>
+
+
+
+    <div id="invoice2">
+
+        <div id="sem2" style="display: none;" class="tempo">
+
+            <center>
+                <table>
+                    <tr>
+                        <td>18MAT21</td>
+                        <td><input type="number" id="mat21"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18CHE22</td>
+                        <td><input type="number" id="xx22"></td>
+                    </tr>
+
+                    <tr>
+                        <td>19CPS23</td>
+                        <td><input type="number" id="xx23"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18ELN24</td>
+                        <td><input type="number" id="xx24"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18ME25</td>
+                        <td><input type="number" id="xx25"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18CHEL26</td>
+                        <td><input type="number" id="xx26L"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18CPL27</td>
+                        <td><input type="number" id="xx27L"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18EGH28</td>
+                        <td><input type="number" id="xx28"></td>
+                    </tr>
+
+
+                </table><br>
+            </center>
+            <button onclick="sem2sgpa()" class="but">Submit</button>
+
+            <br><br>
+
+            <p>SGPA: <span id="sem2finalsgpa" class="span">0</span></p><br><br>
+            <button class="but" id="download2">Download pdf</button>
+
+        </div>
+    </div>
+
+
+    <div id="invoice3">
+        <div class="tab">
+            <div id="sem3" style="display: none;" class="tempo">
+
+                <center>
+                    <table>
+                        <tr>
+                            <td>18MAT31</td>
+                            <td><input type="number" id="mat31"></td>
+                        </tr>
+
+                        <tr>
+                            <td>18xx32</td>
+                            <td><input type="number" id="xx32"></td>
+                        </tr>
+
+                        <tr>
+                            <td>18xx33</td>
+                            <td><input type="number" id="xx33"></td>
+                        </tr>
+
+                        <tr>
+                            <td>18xx34</td>
+                            <td><input type="number" id="xx34"></td>
+                        </tr>
+
+                        <tr>
+                            <td>18xx35</td>
+                            <td><input type="number" id="xx35"></td>
+                        </tr>
+
+                        <tr>
+                            <td>18xx36</td>
+                            <td><input type="number" id="xx36"></td>
+                        </tr>
+
+                        <tr>
+                            <td>18xxL37</td>
+                            <td><input type="number" id="xxl37"></td>
+                        </tr>
+
+                        <tr>
+                            <td>18xxL38</td>
+                            <td><input type="number" id="xxl38"></td>
+                        </tr>
+
+                        <tr>
+                            <td>18KVK/KAK/CPC39</td>
+                            <td><input type="number" id="xx39"></td>
+                        </tr>
+
+                    </table><br>
+                </center>
+                <button onclick="sem3sgpa()" class="but">Submit</button>
+
+                <br><br>
+
+                <p>SGPA: <span id="sem3finalsgpa" class="span">0</span></p><br><br>
+                <button class="but" id="download3">Download pdf</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="invoice4">
+
+        <div id="sem4" style="display: none;" class="tempo">
+            <center>
+                <table>
+
+                    <tr>
+                        <td>18MAT41</td>
+                        <td><input type="number" id="mat41"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx42</td>
+                        <td><input type="number" id="xx42"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx43</td>
+                        <td><input type="number" id="xx43"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx44</td>
+                        <td><input type="number" id="xx44"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx45</td>
+                        <td><input type="number" id="xx45"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx46</td>
+                        <td><input type="number" id="xx46"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xxL47</td>
+                        <td><input type="number" id="xxl47"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xxL48</td>
+                        <td><input type="number" id="xxl48"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18KVK/KAK/CPC49</td>
+                        <td><input type="number" id="xx49"></td>
+                    </tr>
+
+                </table><br>
+            </center>
+            <button onclick="sem4sgpa()" class="but">Submit</button>
+
+            <br><br>
+
+            <p>SGPA: <span id="sem4finalsgpa" class="span">0</span></p><br><br>
+            <button class="but" id="download4">Download pdf</button>
+
+        </div>
+    </div>
+
+    <div id="invoice5">
+
+        <div id="sem5" style="display: none;" class="tempo">
+            <center>
+                <table>
+
+                    <tr>
+                        <td>18xx51</td>
+                        <td><input type="number" id="xx51"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx52</td>
+                        <td><input type="number" id="xx52"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx53</td>
+                        <td><input type="number" id="xx53"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx54</td>
+                        <td><input type="number" id="xx54"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx55</td>
+                        <td><input type="number" id="xx55"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx56</td>
+                        <td><input type="number" id="xx56"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xxL57</td>
+                        <td><input type="number" id="xxl57"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xxL58</td>
+                        <td><input type="number" id="xxl58"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18CIV59</td>
+                        <td><input type="number" id="civ59"></td>
+                    </tr>
+
+                </table><br>
+            </center>
+            <button onclick="sem5sgpa()" class="but">Submit</button>
+
+            <br><br>
+
+            <p>SGPA: <span id="sem5finalsgpa" class="span">0</span></p><br><br>
+            <button class="but" id="download5">Download pdf</button>
+
+        </div>
+    </div>
+
+    <div id="invoice6">
+        <div id="sem6" style="display: none;" class="tempo">
+            <center>
+                <table>
+
+                    <tr>
+                        <td>18xx61</td>
+                        <td><input type="number" id="xx61"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx62</td>
+                        <td><input type="number" id="xx62"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx63</td>
+                        <td><input type="number" id="xx63"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx64x</td>
+                        <td><input type="number" id="xx64x"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx65x</td>
+                        <td><input type="number" id="xx65x"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xxL66</td>
+                        <td><input type="number" id="xxl66"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xxL67</td>
+                        <td><input type="number" id="xxl67"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx68</td>
+                        <td><input type="number" id="xx68"></td>
+                    </tr>
+
+                </table><br>
+            </center>
+            <button onclick="sem6sgpa()" class="but">Submit</button>
+
+            <br><br>
+
+            <p>SGPA: <span id="sem6finalsgpa" class="span">0</span></p><br><br>
+            <button class="but" id="download6">Download pdf</button>
+
+        </div>
+    </div>
+
+
+    <div id="invoice7">
+        <div id="sem7" style="display: none;" class="tempo">
+            <center>
+                <table>
+
+                    <tr>
+                        <td>18xx71</td>
+                        <td><input type="number" id="xx71"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx72</td>
+                        <td><input type="number" id="xx72"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx73x</td>
+                        <td><input type="number" id="xx73x"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx74x</td>
+                        <td><input type="number" id="xx74x"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx75x</td>
+                        <td><input type="number" id="xx75x"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xxL76</td>
+                        <td><input type="number" id="xxl76"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xxP77</td>
+                        <td><input type="number" id="xxp77"></td>
+                    </tr>
+
+                </table><br>
+            </center>
+            <button onclick="sem7sgpa()" class="but">Submit</button>
+
+            <br><br>
+
+            <p>SGPA: <span id="sem7finalsgpa" class="span">0</span></p><br><br>
+            <button class="but" id="download7">Download pdf</button>
+
+        </div>
+    </div>
+
+
+    <div id="invoice9">
+        <div id="sem8" style="display: none;" class="tempo">
+            <center>
+
+                <table>
+
+                    <tr>
+                        <td>18xx81</td>
+                        <td><input type="number" id="xx81"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xx82x</td>
+                        <td><input type="number" id="xx82x"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xxP83</td>
+                        <td><input type="number" id="xxp83"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xxS84</td>
+                        <td><input type="number" id="xxs84"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18xxI85</td>
+                        <td><input type="number" id="xxi85"></td>
+                    </tr>
+
+                </table><br>
+            </center>
+            <button onclick="sem8sgpa()" class="but">Submit</button>
+
+            <br><br>
+
+            <p>SGPA: <span id="sem8finalsgpa" class="span">0</span></p><br><br>
+            <button class="but" id="download9">Download pdf</button>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+<script>
+
+    semSelector = document.getElementById('sem');
+    semSelector.addEventListener('change', () => {
+        mainPage = document.getElementById('main');
+        mainPage.style.display = 'none';
+        SemPage(semSelector.value);
+    });
+
+    function SemPage(sem) {
+
+        switch (sem) {
+
+            case '1':
+                sem1 = document.getElementById('sem1');
+                sem1.style.display = 'block';
+                break;
+
+            case '2':
+                sem2 = document.getElementById('sem2');
+                sem2.style.display = 'block';
+                break;
+
+
+            case '3':
+                sem3 = document.getElementById('sem3');
+                sem3.style.display = 'block';
+                break;
+
+            case '4':
+                sem4 = document.getElementById('sem4');
+                sem4.style.display = 'block';
+                break;
+
+            case '5':
+                sem5 = document.getElementById('sem5');
+                sem5.style.display = 'block';
+                break;
+
+            case '6':
+                sem6 = document.getElementById('sem6');
+                sem6.style.display = 'block';
+                break;
+
+            case '7':
+                sem7 = document.getElementById('sem7');
+                sem7.style.display = 'block';
+                break;
+
+            case '8':
+                sem8 = document.getElementById('sem8');
+                sem8.style.display = 'block';
+                break;
+
+            default:
+                alert('Something went wrong!')
+        }
+    }
+
+    function sem1sgpa() {
+        sgpaloc = document.getElementById('sem1finalsgpa');
+        mat11 = grade(document.getElementById('mat11').value);
+        xx12 = grade(document.getElementById('xx12').value);
+        xx13 = grade(document.getElementById('xx13').value);
+        xx14 = grade(document.getElementById('xx14').value);
+        xx15 = grade(document.getElementById('xx15').value);
+        xx16L = grade(document.getElementById('xx16L').value);
+        xx17L = grade(document.getElementById('xx17L').value);
+        xx18 = grade(document.getElementById('xx18').value);
+
+
+        sgpa = ((mat11 * 4 + xx12 * 4 + xx13 * 3 + xx14 * 3 + xx15 * 3 + xx16L * 1 + xx17L * 1 + xx18 * 1) / 20).toFixed(2);
+
+        sgpaloc.innerHTML = sgpa
+
+    }
+
+
+    function sem2sgpa() {
+        sgpaloc = document.getElementById('sem2finalsgpa');
+        mat21 = grade(document.getElementById('mat21').value);
+        xx22 = grade(document.getElementById('xx22').value);
+        xx23 = grade(document.getElementById('xx23').value);
+        xx24 = grade(document.getElementById('xx24').value);
+        xx25L = grade(document.getElementById('xx25').value);
+        xx26L = grade(document.getElementById('xx26L').value);
+        xx27L = grade(document.getElementById('xx27L').value);
+        xx28 = grade(document.getElementById('xx28').value);
+
+
+        sgpa = ((mat21 * 4 + xx22 * 4 + xx23 * 3 + xx24 * 3 + xx25L * 3 + xx26L * 1 + xx27L * 1 + xx28 * 1) / 20).toFixed(2);
+
+        sgpaloc.innerHTML = sgpa
+    }
+
+    function sem3sgpa() {
+        sgpaloc = document.getElementById('sem3finalsgpa');
+        mat31 = grade(document.getElementById('mat31').value);
+        xx32 = grade(document.getElementById('xx32').value);
+        xx33 = grade(document.getElementById('xx33').value);
+        xx34 = grade(document.getElementById('xx34').value);
+        xx35 = grade(document.getElementById('xx35').value);
+        xx36 = grade(document.getElementById('xx36').value);
+        xxl37 = grade(document.getElementById('xxl37').value);
+        xxl38 = grade(document.getElementById('xxl38').value);
+        xx39 = grade(document.getElementById('xx39').value);
+
+        sgpa = ((mat31 * 3 + xx32 * 4 + xx33 * 3 + xx34 * 3 + xx35 * 3 + xx36 * 3 + xxl37 * 2 + xxl38 * 2 + xx39) / 24).toFixed(2);
+
+        sgpaloc.innerHTML = sgpa
+    }
+
+    function sem4sgpa() {
+        sgpaloc = document.getElementById('sem4finalsgpa');
+        mat41 = grade(document.getElementById('mat41').value);
+        xx42 = grade(document.getElementById('xx42').value);
+        xx43 = grade(document.getElementById('xx43').value);
+        xx44 = grade(document.getElementById('xx44').value);
+        xx45 = grade(document.getElementById('xx45').value);
+        xx46 = grade(document.getElementById('xx46').value);
+        xxl47 = grade(document.getElementById('xxl47').value);
+        xxl48 = grade(document.getElementById('xxl48').value);
+        xx49 = grade(document.getElementById('xx49').value);
+
+        sgpa = ((mat41 * 3 + xx42 * 4 + xx43 * 3 + xx44 * 3 + xx45 * 3 + xx46 * 3 + xxl47 * 2 + xxl48 * 2 + xx49) / 24).toFixed(2);
+
+        sgpaloc.innerHTML = sgpa
+    }
+
+    function sem5sgpa() {
+        sgpaloc = document.getElementById('sem5finalsgpa');
+        xx51 = grade(document.getElementById('xx51').value);
+        xx52 = grade(document.getElementById('xx52').value);
+        xx53 = grade(document.getElementById('xx53').value);
+        xx54 = grade(document.getElementById('xx54').value);
+        xx55 = grade(document.getElementById('xx55').value);
+        xx56 = grade(document.getElementById('xx56').value);
+        xxl57 = grade(document.getElementById('xxl57').value);
+        xxl58 = grade(document.getElementById('xxl58').value);
+        civ59 = grade(document.getElementById('civ59').value);
+
+        sgpa = ((xx51 * 3 + xx52 * 4 + xx53 * 4 + xx54 * 3 + xx55 * 3 + xx56 * 3 + xxl57 * 2 + xxl58 * 2 + civ59) / 25).toFixed(2);
+
+        sgpaloc.innerHTML = sgpa
+    }
+
+    function sem6sgpa() {
+        sgpaloc = document.getElementById('sem6finalsgpa');
+        xx61 = grade(document.getElementById('xx61').value);
+        xx62 = grade(document.getElementById('xx62').value);
+        xx63 = grade(document.getElementById('xx63').value);
+        xx64x = grade(document.getElementById('xx64x').value);
+        xx65x = grade(document.getElementById('xx65x').value);
+        xxl66 = grade(document.getElementById('xxl66').value);
+        xxl67 = grade(document.getElementById('xxl67').value);
+        xx68 = grade(document.getElementById('xx68').value);
+
+        sgpa = ((xx61 * 4 + xx62 * 4 + xx63 * 4 + xx64x * 3 + xx65x * 3 + xxl66 * 2 + xxl67 * 2 + xx68 * 2) / 24).toFixed(2);
+
+        sgpaloc.innerHTML = sgpa
+    }
+
+    function sem7sgpa() {
+        sgpaloc = document.getElementById('sem7finalsgpa');
+        xx71 = grade(document.getElementById('xx71').value);
+        xx72 = grade(document.getElementById('xx72').value);
+        xx73x = grade(document.getElementById('xx73x').value);
+        xx74x = grade(document.getElementById('xx74x').value);
+        xx75x = grade(document.getElementById('xx75x').value);
+        xxl76 = grade(document.getElementById('xxl76').value);
+        xxp77 = grade(document.getElementById('xxp77').value);
+
+        sgpa = ((xx71 * 4 + xx72 * 4 + xx73x * 3 + xx74x * 3 + xx75x * 3 + xxl76 * 2 + xxp77) / 20).toFixed(2);
+
+        sgpaloc.innerHTML = sgpa
+    }
+
+    function sem8sgpa() {
+        sgpaloc = document.getElementById('sem8finalsgpa');
+        xx81 = grade(document.getElementById('xx81').value);
+        xx82x = grade(document.getElementById('xx82x').value);
+        xxp83 = grade(document.getElementById('xxp83').value);
+        xxs84 = grade(document.getElementById('xxs84').value);
+        xxi85 = grade(document.getElementById('xxi85').value);
+
+        sgpa = ((xx81 * 3 + xx82x * 3 + xxp83 * 8 + xxs84 + xxi85 * 3) / 18).toFixed(2);
+
+        sgpaloc.innerHTML = sgpa
+    }
+
+    function grade(mark) {
+
+        mark = parseInt(mark)
+
+        switch (true) {
+
+            case (mark > 89):
+                return 10;
+
+            case (mark > 79):
+                return 9;
+
+            case (mark > 69):
+                return 8;
+
+            case (mark > 59):
+                return 7;
+
+            case (mark > 49):
+                return 6;
+
+            case (mark > 44):
+                return 5;
+
+            case (mark > 39):
+                return 4;
+
+            default:
+                return 0;
+        }
+    }
+
+</script>
+<center>
+    <h1>To Calculate CGPA</h1>
+    <button class="but"><a href="cgpa.html" style="text-decoration:none; color:white" ;>CGPA</a></button>
+</center>
+
+</html>

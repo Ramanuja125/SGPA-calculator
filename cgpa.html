@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>CPGA CONVERTER</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="sgpa.css">
+    <script src="pdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+</head>
+
+<body>
+    <h1>
+        <center>Welcome to CGPA calculator.</center>
+    </h1><br><br>
+
+
+
+    <form id="myForm">
+        <div id="invoice8">
+
+            <div id="main" class="main">
+                <center>
+                    <b>Sem 1:</b><input type="number" id="s1" value="0"><br><br>
+                    <b>Sem 2:</b><input type="number" id="s2" value="0"><br><br>
+                    <b>Sem 3:</b><input type="number" id="s3" value="0"><br><br>
+                    <b>Sem 4:</b><input type="number" id="s4" value="0"><br><br>
+                    <b>Sem 5:</b><input type="number" id="s5" value="0"><br><br>
+                    <b>Sem 6:</b><input type="number" id="s6" value="0"><br><br>
+                    <b>Sem 7:</b><input type="number" id="s7" value="0"><br><br>
+                    <b>Sem 8:</b><input type="number" id="s8" value="0"><br><br><br>
+
+                    <select id="operators" style="visibility:hidden;">
+                        <option value="+">+</option>
+
+                    </select>
+
+                    <button class="but" onclick="calc();">calculate</button>
+                    <input type="button" onclick="myFunction()" value="Reset" class="but"><br><br><br>
+
+
+                    <b>CGPA:</b><input type="text" size="4" maxlength="4" id="result" readonly>&emsp;
+                    <b>Percentage:</b><input type="text" size="4" maxlength="4" id="percent" readonly>%<br><br><br>
+                    <button class="but" id="download8">Download pdf</button>
+
+            </div>
+            </center>
+        </div>
+    </form>
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("myForm").reset();
+        }
+    </script>
+
+
+    <script>
+
+        function calc() {
+            var percent, i, credSum = 0;
+
+            var n1 = (document.getElementById('s1').value);
+            var n2 = (document.getElementById('s2').value);
+            var n3 = (document.getElementById('s3').value);
+            var n4 = (document.getElementById('s4').value);
+            var n5 = (document.getElementById('s5').value);
+            var n6 = (document.getElementById('s6').value);
+            var n7 = (document.getElementById('s7').value);
+            var n8 = (document.getElementById('s8').value);
+
+            var array1 = new Array(8);
+
+            array1[0] = parseFloat(n1);
+            array1[1] = parseFloat(n2);
+            array1[2] = parseFloat(n3);
+            array1[3] = parseFloat(n4);
+            array1[4] = parseFloat(n5);
+            array1[5] = parseFloat(n6);
+            array1[6] = parseFloat(n7);
+            array1[7] = parseFloat(n8);
+
+            var oper = document.getElementById('operators').value;
+
+            if (oper === '+') {
+
+                if (array1[0] > 0) { credSum += 24; }
+                if (array1[1] > 0) { credSum += 24; }
+                if (array1[2] > 0) { credSum += 28; }
+                if (array1[3] > 0) { credSum += 28; }
+                if (array1[4] > 0) { credSum += 26; }
+                if (array1[5] > 0) { credSum += 26; }
+                if (array1[6] > 0) { credSum += 24; }
+                if (array1[7] > 0) { credSum += 20; }
+
+                var r1 = parseFloat((array1[0] + array1[1]) * 24 + (array1[2] + array1[3]) * 28 + (array1[4] + array1[5]) * 26 + array1[6] * 24 + array1[7] * 20).toFixed(2);
+
+                document.getElementById('result').value = parseFloat(r1 / credSum).toFixed(2);
+                var r2 = parseFloat(r1 / credSum);
+
+                document.getElementById('percent').value = parseFloat((r2 - 0.75) * 10).toFixed(2);
+
+
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
