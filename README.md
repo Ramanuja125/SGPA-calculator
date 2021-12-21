@@ -1,4 +1,4 @@
-Insstructions to run the file is written below from line 8
+Instructions to run the file is written below from line 8
 
 The Github live does not support .php files.
 We have used .php files for very simple operations like adding registered people and
